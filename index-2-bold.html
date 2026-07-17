@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASPIRE — AI Community Engagement Infrastructure · aspire.com.ng</title>
+<meta name="description" content="ASPIRE is the AI engagement intelligence platform for communities, NGOs, governments and FMCGs. Verified networks. AI intelligence. At scale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+:root{
+  --black:#09090b;
+  --dark:#141417;
+  --dark2:#1f1f23;
+  --white:#ffffff;
+  --off:#f4f4f5;
+  --muted:#a1a1aa;
+  --dim:#71717a;
+  --amber:#f59e0b;
+  --amber2:#fbbf24;
+  --indigo:#6366f1;
+  --indigo2:#818cf8;
+  --green:#22c55e;
+  --cyan:#06b6d4;
+  --red:#ef4444;
+  --line:rgba(255,255,255,.08);
+  --line-dark:rgba(0,0,0,.08);
+}
+
+body{font-family:'Inter',system-ui,sans-serif;background:var(--black);color:var(--white);line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+.shell{width:min(1240px,calc(100% - 48px));margin:0 auto;}
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+.nav-wrap{
+  position:sticky;top:0;z-index:50;
+  background:rgba(9,9,11,.85);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(20px);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px;}
+.brand{display:inline-flex;align-items:center;gap:10px;}
+.brand-mark{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--amber);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:17px;color:var(--black);
+}
+.brand-name{font-size:19px;font-weight:900;color:var(--white);letter-spacing:-.04em;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--dim);margin-left:28px;transition:color .15s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{
+  background:var(--amber);color:var(--black);
+  border-radius:6px;padding:9px 20px;
+  font-size:13px;font-weight:800;
+  letter-spacing:-.01em;
+  transition:background .15s;
+}
+.nav-cta:hover{background:var(--amber2);}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero{
+  padding:100px 0 80px;
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;top:-200px;right:-100px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(99,102,241,.15) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,158,11,.1);
+  border:1px solid rgba(245,158,11,.25);
+  border-radius:100px;padding:5px 14px;
+  font-size:11px;font-weight:800;color:var(--amber);
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:32px;
+}
+h1.hero-h{
+  font-size:88px;font-weight:900;line-height:.96;
+  letter-spacing:-.06em;color:var(--white);
+  max-width:900px;margin-bottom:32px;
+}
+h1.hero-h .line2{color:var(--amber);}
+h1.hero-h .line3{
+  -webkit-text-stroke:1px rgba(255,255,255,.25);
+  color:transparent;
+}
+.hero-sub{
+  font-size:19px;font-weight:400;color:var(--muted);
+  max-width:500px;line-height:1.6;margin-bottom:40px;
+}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-amber{
+  background:var(--amber);color:var(--black);
+  border-radius:8px;padding:14px 28px;
+  font-size:15px;font-weight:800;
+  transition:background .15s,transform .1s;
+}
+.btn-amber:hover{background:var(--amber2);transform:translateY(-1px);}
+.btn-ghost{
+  color:var(--muted);border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;padding:14px 28px;
+  font-size:15px;font-weight:600;
+  transition:color .15s,border-color .15s;
+}
+.btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,.35);}
+
+.hero-numbers{
+  display:flex;gap:0;margin-top:60px;
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  max-width:600px;
+}
+.hn{flex:1;padding:20px 24px;border-right:1px solid var(--line);}
+.hn:last-child{border-right:none;}
+.hn-num{font-size:32px;font-weight:900;letter-spacing:-.04em;color:var(--white);}
+.hn-lbl{font-size:12px;color:var(--dim);margin-top:3px;}
+
+/* ── MARQUEE STRIP ────────────────────────────────────────────── */
+.marquee-wrap{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--dark);
+  padding:0;overflow:hidden;
+}
+.marquee-track{
+  display:flex;gap:48px;align-items:center;
+  padding:14px 0;
+  white-space:nowrap;
+  animation:marquee 20s linear infinite;
+  width:max-content;
+}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.marquee-item{
+  font-size:13px;font-weight:700;color:var(--dim);
+  letter-spacing:.04em;text-transform:uppercase;
+  display:flex;align-items:center;gap:16px;
+}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+
+/* ── PROBLEM ──────────────────────────────────────────────────── */
+.section{padding:100px 0;}
+.section.dark{background:var(--black);}
+.section.darker{background:var(--dark);}
+
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.eyebrow.indigo{color:var(--indigo2);}
+.eyebrow.green{color:var(--green);}
+.eyebrow.cyan{color:var(--cyan);}
+
+h2.sec-h{font-size:54px;font-weight:900;letter-spacing:-.04em;line-height:1.04;color:var(--white);margin-bottom:16px;}
+h2.sec-h span{color:var(--amber);}
+.sec-p{font-size:17px;color:var(--muted);line-height:1.65;max-width:560px;}
+
+.problems{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  margin-top:52px;
+}
+.problem{background:var(--dark);padding:36px 32px;}
+.problem-lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.problem-icon{font-size:36px;margin-bottom:14px;}
+.problem-q{font-size:17px;font-weight:500;color:rgba(255,255,255,.75);line-height:1.5;}
+
+/* ── CAPABILITIES ─────────────────────────────────────────────── */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:52px;}
+.cap{background:var(--dark);padding:32px 28px;transition:background .2s;}
+.cap:hover{background:var(--dark2);}
+.cap-no{font-size:52px;font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.06);margin-bottom:-10px;}
+.cap-title{font-size:18px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.cap-body{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ── AI SECTION ───────────────────────────────────────────────── */
+.ai-block{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:72px;align-items:center;
+}
+.ai-h{font-size:52px;font-weight:900;letter-spacing:-.04em;line-height:1.04;color:var(--white);margin:16px 0;}
+.ai-h .hl{color:var(--indigo2);}
+.ai-p{font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:28px;}
+.ai-feat{display:flex;flex-direction:column;gap:14px;}
+.af{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:10px;border:1px solid var(--line);}
+.af:hover{border-color:rgba(99,102,241,.3);background:rgba(99,102,241,.05);}
+.af-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.af-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.af-body{font-size:12px;color:var(--dim);line-height:1.5;}
+
+/* Terminal */
+.term{
+  background:#0d1117;
+  border:1px solid rgba(99,102,241,.3);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 0 60px rgba(99,102,241,.12);
+}
+.term-bar{
+  background:rgba(99,102,241,.08);
+  border-bottom:1px solid rgba(99,102,241,.15);
+  padding:12px 16px;display:flex;align-items:center;gap:6px;
+}
+.td{width:10px;height:10px;border-radius:50%;}
+.term-head{margin-left:6px;font-size:10px;color:#475569;font-family:'JetBrains Mono',monospace;}
+.term-body{padding:20px;}
+.t-line{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9;}
+.t-line.cmd{color:#94a3b8;} .t-line.cmd span{color:#818cf8;}
+.t-line.res{color:#e2e8f0;border-left:2px solid #22c55e;padding-left:12px;margin:8px 0;}
+.t-line.res2{color:#fde68a;border-left-color:#f59e0b;}
+.t-btns{display:flex;gap:8px;margin-top:14px;}
+.t-b{border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;cursor:default;}
+.t-b.i{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;}
+.t-b.g{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#86efac;}
+.t-b.a{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:#fde68a;}
+
+/* ── USE CASES ────────────────────────────────────────────────── */
+.uc-list{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  margin-top:52px;
+}
+.uc{
+  background:var(--dark);padding:28px 24px;
+  transition:background .2s;position:relative;
+}
+.uc:hover{background:var(--dark2);}
+.uc-num{font-size:48px;font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.04);position:absolute;top:12px;right:16px;}
+.uc-icon{font-size:28px;margin-bottom:10px;}
+.uc-tag{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.uc-title{font-size:16px;font-weight:800;color:var(--white);margin-bottom:8px;}
+.uc-body{font-size:13px;color:var(--muted);line-height:1.5;}
+.uc-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.chip{border-radius:4px;padding:3px 9px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+.chip.a{background:rgba(245,158,11,.15);color:#fde68a;}
+.chip.i{background:rgba(99,102,241,.15);color:#a5b4fc;}
+.chip.g{background:rgba(34,197,94,.1);color:#86efac;}
+.chip.c{background:rgba(6,182,212,.1);color:#67e8f9;}
+
+/* ── SERVICES ─────────────────────────────────────────────────── */
+.services-banner{
+  background:linear-gradient(135deg,rgba(99,102,241,.12) 0%,rgba(6,182,212,.08) 100%);
+  border:1px solid rgba(99,102,241,.2);
+  border-radius:20px;padding:64px;
+  position:relative;overflow:hidden;
+}
+.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:rgba(255,255,255,.05);border-radius:10px;overflow:hidden;margin-top:40px;}
+.svc{background:var(--dark2);padding:22px 16px;text-align:center;}
+.svc-icon{font-size:26px;margin-bottom:8px;}
+.svc-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.svc-body{font-size:11px;color:var(--dim);line-height:1.5;}
+
+/* ── ARCHITECTURE ─────────────────────────────────────────────── */
+.layer-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:2px;background:var(--line);border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;margin-top:40px;
+}
+.layer{
+  background:var(--dark);padding:14px 8px;
+  text-align:center;font-size:10px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.04em;
+  transition:background .15s,color .15s;
+}
+.layer:hover{background:rgba(99,102,241,.15);color:var(--indigo2);}
+.layer span{display:block;font-size:16px;font-weight:900;color:rgba(255,255,255,.08);margin-bottom:4px;}
+
+/* ── DASHBOARD ────────────────────────────────────────────────── */
+.dash{
+  background:var(--dark);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;margin-top:52px;
+}
+.dash-header{
+  display:flex;align-items:center;gap:8px;
+  padding:14px 20px;border-bottom:1px solid var(--line);
+}
+.dd{width:10px;height:10px;border-radius:50%;}
+.dash-label{font-size:11px;color:var(--dim);margin-left:6px;font-family:'JetBrains Mono',monospace;}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);}
+.ds{background:var(--dark);padding:18px 20px;}
+.ds-num{font-size:26px;font-weight:900;letter-spacing:-.04em;color:var(--white);}
+.ds-lbl{font-size:11px;color:var(--dim);margin-top:2px;}
+.ds-trend{font-size:11px;font-weight:700;margin-top:4px;}
+.ds-trend.g{color:var(--green);}
+.ds-trend.a{color:var(--amber);}
+.dash-lower{padding:20px;display:grid;grid-template-columns:2fr 1fr;gap:16px;}
+.db{border:1px solid var(--line);border-radius:10px;padding:16px;}
+.db-label{font-size:10px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.mini-density{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin-bottom:10px;}
+.md{aspect-ratio:1;border-radius:2px;}
+.issue-bar{margin-bottom:8px;}
+.ib-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:3px;}
+.ib-track{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.ib-fill{height:100%;border-radius:2px;}
+
+/* ── TRACTION ─────────────────────────────────────────────────── */
+.traction-box{
+  border:1px solid var(--line);border-radius:20px;
+  padding:60px;position:relative;overflow:hidden;
+}
+.traction-box::before{
+  content:'';position:absolute;top:-100px;left:-100px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 60%);
+}
+.traction-quote{
+  font-size:30px;font-weight:700;color:var(--white);
+  line-height:1.3;max-width:700px;margin-bottom:16px;
+  position:relative;
+}
+.traction-quote .hl{color:var(--amber);}
+.traction-attr{font-size:13px;color:var(--dim);}
+.traction-stat-row{
+  display:flex;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:40px;
+}
+.ts{flex:1;background:var(--dark);padding:24px 20px;}
+.ts-num{font-size:42px;font-weight:900;letter-spacing:-.05em;color:var(--white);}
+.ts-lbl{font-size:12px;color:var(--dim);margin-top:4px;line-height:1.4;}
+
+/* ── BUSINESS MODEL ───────────────────────────────────────────── */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px;}
+.price-card{
+  border-radius:12px;border:1px solid var(--line);
+  background:var(--dark);padding:28px 22px;
+  display:flex;flex-direction:column;position:relative;
+}
+.price-card.featured{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber);}
+.price-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--black);font-size:9px;font-weight:900;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;}
+.price-tier{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.price-num{font-size:34px;font-weight:900;letter-spacing:-.04em;color:var(--white);}
+.price-unit{font-size:12px;color:var(--dim);margin-top:4px;margin-bottom:20px;}
+.price-feats{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;}
+.price-feats li{font-size:12px;color:var(--muted);display:flex;gap:8px;}
+.price-feats li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* ── INVESTORS ────────────────────────────────────────────────── */
+.market-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:40px;}
+.mt{background:var(--dark);padding:28px 24px;text-align:center;}
+.mt-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.mt-num{font-size:46px;font-weight:900;letter-spacing:-.05em;color:var(--white);}
+.mt-num.a{color:var(--amber);}
+.mt-num.i{color:var(--indigo2);}
+.mt-num.g{color:var(--green);}
+.mt-lbl{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.4;}
+
+.moats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+.moat{border:1px solid var(--line);border-radius:12px;padding:24px;}
+.moat-num{font-size:40px;font-weight:900;letter-spacing:-.05em;color:rgba(255,255,255,.06);margin-bottom:-5px;}
+.moat-title{font-size:16px;font-weight:800;color:var(--white);margin-bottom:8px;}
+.moat-body{font-size:13px;color:var(--muted);line-height:1.55;}
+
+/* ── CTA ──────────────────────────────────────────────────────── */
+.cta-block{
+  border-radius:20px;
+  background:linear-gradient(135deg,#18181b 0%,#27272a 100%);
+  border:1px solid rgba(245,158,11,.2);
+  padding:80px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-block::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(245,158,11,.06) 0%,transparent 60%);
+}
+.cta-inner{position:relative;}
+.cta-h{font-size:52px;font-weight:900;letter-spacing:-.04em;color:var(--white);margin-bottom:16px;}
+.cta-p{font-size:18px;color:var(--muted);margin-bottom:36px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+footer{background:var(--dark);border-top:1px solid var(--line);padding:52px 0 32px;}
+.foot-top{display:flex;gap:40px;justify-content:space-between;padding-bottom:32px;border-bottom:1px solid var(--line);}
+.foot-brand p{font-size:13px;color:var(--dim);margin-top:10px;max-width:220px;line-height:1.5;}
+.foot-col h4{font-size:10px;font-weight:800;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.3);margin-bottom:8px;transition:color .15s;}
+.foot-col a:hover{color:var(--muted);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:12px;color:rgba(255,255,255,.2);flex-wrap:wrap;gap:12px;}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media(max-width:960px){
+  h1.hero-h{font-size:56px;}
+  h2.sec-h{font-size:38px;}
+  .ai-block{grid-template-columns:1fr;}
+  .caps{grid-template-columns:1fr 1fr;}
+  .uc-list{grid-template-columns:1fr 1fr;}
+  .problems{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr 1fr;}
+  .svc-grid{grid-template-columns:repeat(3,1fr);}
+  .moats{grid-template-columns:1fr;}
+  .foot-top{flex-wrap:wrap;}
+}
+@media(max-width:640px){
+  h1.hero-h{font-size:40px;}
+  h2.sec-h{font-size:30px;}
+  .caps{grid-template-columns:1fr;}
+  .uc-list{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .layer-grid{grid-template-columns:repeat(4,1fr);}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .market-tiles{grid-template-columns:1fr;}
+  .traction-stat-row{flex-direction:column;}
+  .hero-numbers{flex-direction:column;}
+  .services-banner,.cta-block{padding:36px 20px;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav-wrap">
+  <nav class="shell nav">
+    <a href="#" class="brand">
+      <div class="brand-mark">A</div>
+      <div class="brand-name">ASPIRE</div>
+    </a>
+    <div class="nav-links">
+      <a href="#platform">Platform</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#ai">AI</a>
+      <a href="#model">Pricing</a>
+      <a href="#investors">Investors</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get access</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="shell">
+    <div class="hero-kicker">Seed-stage · Now open for pilots</div>
+    <h1 class="hero-h">
+      Community<br>
+      <span class="line2">intelligence.</span><br>
+      <span class="line3">Everywhere.</span>
+    </h1>
+    <p class="hero-sub">ASPIRE gives organisations the AI engine to grow verified communities, understand real sentiment, and act — at the speed of now.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-amber">Request a demo</a>
+      <a href="#platform" class="btn-ghost">See the platform</a>
+    </div>
+    <div class="hero-numbers">
+      <div class="hn">
+        <div class="hn-num">2,000+</div>
+        <div class="hn-lbl">Members in 4 days · 2014 prototype</div>
+      </div>
+      <div class="hn">
+        <div class="hn-num">14</div>
+        <div class="hn-lbl">Integrated capability layers</div>
+      </div>
+      <div class="hn">
+        <div class="hn-num">10+</div>
+        <div class="hn-lbl">Sectors addressable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span>NGOs &amp; Civic Orgs</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Government Agencies</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>FMCG Distribution</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Political Campaigns</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Community Health</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Financial Inclusion</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Election Observation</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Skills &amp; Employment</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>AI Education</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Unions &amp; Membership</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item"><span class="marquee-dot"></span>NGOs &amp; Civic Orgs</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Government Agencies</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>FMCG Distribution</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Political Campaigns</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Community Health</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Financial Inclusion</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Election Observation</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Skills &amp; Employment</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>AI Education</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Unions &amp; Membership</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section darker" id="problem">
+  <div class="shell">
+    <div class="eyebrow">The Problem</div>
+    <h2 class="sec-h">Every sector. <span>Same broken loop.</span></h2>
+    <p class="sec-p">Organisations spend to reach communities. They have no real-time visibility, no feedback channel, no way to verify impact — and no memory when the programme ends.</p>
+    <div class="problems">
+      <div class="problem">
+        <div class="problem-icon">🏢</div>
+        <div class="problem-lbl">The Organisation</div>
+        <div class="problem-q">"We spend on outreach but cannot measure what reached people or what changed."</div>
+      </div>
+      <div class="problem">
+        <div class="problem-icon">👤</div>
+        <div class="problem-lbl">The Community Member</div>
+        <div class="problem-q">"I hear about programmes. I never feel connected or see any direct benefit."</div>
+      </div>
+      <div class="problem">
+        <div class="problem-icon">🌍</div>
+        <div class="problem-lbl">The Field Worker</div>
+        <div class="problem-q">"I report upward but the chain is slow, distorted, and my insights disappear."</div>
+      </div>
+      <div class="problem">
+        <div class="problem-icon">💰</div>
+        <div class="problem-lbl">The Funder</div>
+        <div class="problem-q">"I release budget, I see reports, I cannot verify the impact or trace where value went."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="section dark" id="platform">
+  <div class="shell">
+    <div class="eyebrow">The Platform</div>
+    <h2 class="sec-h">Not a tool.<br>An <span>operating layer.</span></h2>
+    <p class="sec-p">ASPIRE combines verified growth, AI intelligence, direct communications, and persistent memory into a complete engagement infrastructure.</p>
+    <div class="caps">
+      <div class="cap">
+        <div class="cap-no">01</div>
+        <div class="cap-title">Verified Member Networks</div>
+        <div class="cap-body">Progressive identity verification. Every member tied to a real community. No ghost accounts, no inflated numbers. Trust embedded from registration.</div>
+      </div>
+      <div class="cap">
+        <div class="cap-no">02</div>
+        <div class="cap-title">Direct Multi-Channel Comms</div>
+        <div class="cap-body">SMS, WhatsApp, voice broadcasts, USSD. Segment by location, language, demographic. Reaches feature phones with no data. 96%+ delivery at scale.</div>
+      </div>
+      <div class="cap">
+        <div class="cap-no">03</div>
+        <div class="cap-title">AI Engagement Intelligence</div>
+        <div class="cap-body">Ask in plain language. Get community-level answers. Generate targeted messages. Detect sentiment before problems escalate. Decide where to act next.</div>
+      </div>
+      <div class="cap">
+        <div class="cap-no">04</div>
+        <div class="cap-title">Viral Growth Engine</div>
+        <div class="cap-body">Incentive-driven referrals. Visible rewards build trust and social proof. Progressive tiers turn participants into active organisers.</div>
+      </div>
+      <div class="cap">
+        <div class="cap-no">05</div>
+        <div class="cap-title">Geographic Density Mapping</div>
+        <div class="cap-body">Know where your community is strongest — by street, ward, or district. Heatmaps in real time. See coverage gaps instantly and deploy to close them.</div>
+      </div>
+      <div class="cap">
+        <div class="cap-no">06</div>
+        <div class="cap-title">Persistent Organisational Memory</div>
+        <div class="cap-body">Each programme builds on the last. Organiser data, member history, issue trends. Competitors start every campaign from zero. ASPIRE compounds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section class="section darker" id="ai">
+  <div class="shell">
+    <div class="ai-block">
+      <div>
+        <div class="eyebrow indigo">AI-First Architecture</div>
+        <h2 class="ai-h">The <span class="hl">intelligence</span> layer every community operation needs.</h2>
+        <p class="ai-p">ASPIRE's AI processes every verified interaction in real time — surfacing the signals, generating the messages, and finding the leaders that would otherwise stay invisible.</p>
+        <div class="ai-feat">
+          <div class="af">
+            <div class="af-icon">🔍</div>
+            <div>
+              <div class="af-title">Conversational Community Intelligence</div>
+              <div class="af-body">Ask questions in natural language. Get real answers from verified field data. No analyst required, no waiting for reports.</div>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">✍️</div>
+            <div>
+              <div class="af-title">Localised Message Generation</div>
+              <div class="af-body">Generate targeted messages in Yoruba, Hausa, Igbo, Pidgin, or English, calibrated to specific demographics and community segments.</div>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">📡</div>
+            <div>
+              <div class="af-title">Sentiment &amp; Issue Detection</div>
+              <div class="af-body">Surface mood shifts and emerging concerns before they escalate. AI monitors community signals continuously — you see the trend before it becomes a crisis.</div>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">🌟</div>
+            <div>
+              <div class="af-title">Organiser Discovery</div>
+              <div class="af-body">Behavioural signal analysis identifies your most effective community builders automatically. Find hidden leaders before your competitors do.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="term">
+          <div class="term-bar">
+            <div class="td" style="background:#ef4444;"></div>
+            <div class="td" style="background:#f59e0b;"></div>
+            <div class="td" style="background:#22c55e;"></div>
+            <span class="term-head">aspire-ai · field-intelligence · v2.4</span>
+          </div>
+          <div class="term-body">
+            <div class="t-line cmd"><span>$</span> analyse --zone "Sector 4" --last 7d</div>
+            <div class="t-line res">
+              ✦ 274 verified responses<br>
+              ✦ Water supply (38%) · Roads (27%) · Jobs (19%)<br>
+              ✦ Sentiment: neutral→negative over 4 days<br>
+              ✦ 3 independent organiser reports corroborate<br>
+              ✦ Recommended: broadcast Ward 4+6 before Thursday
+            </div>
+            <div class="t-btns">
+              <div class="t-b i">Draft message</div>
+              <div class="t-b g">View density map</div>
+              <div class="t-b a">Export report</div>
+            </div>
+            <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);">
+              <div class="t-line cmd"><span>$</span> generate --target "market-women" --lang yoruba</div>
+              <div class="t-line res res2">
+                ✦ Message generated in Yoruba (96% confidence)<br>
+                ✦ SMS-compatible · Accessible reading level<br>
+                ✦ 847 verified contacts ready to receive
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section dark" id="sectors">
+  <div class="shell">
+    <div class="eyebrow">Sectors</div>
+    <h2 class="sec-h">Built for every sector<br>that <span>works with communities.</span></h2>
+    <div class="uc-list">
+      <div class="uc">
+        <div class="uc-num">01</div>
+        <div class="uc-icon">🏥</div>
+        <div class="uc-tag">NGOs &amp; Civic</div>
+        <div class="uc-title">Beneficiary Engagement</div>
+        <div class="uc-body">Verified beneficiary registration, field feedback loops, programme delivery tracking. AI-summarised reports for donors.</div>
+        <div class="uc-chips"><span class="chip g">Community feedback</span><span class="chip i">Donor reporting</span></div>
+      </div>
+      <div class="uc">
+        <div class="uc-num">02</div>
+        <div class="uc-icon">🏪</div>
+        <div class="uc-tag">FMCG &amp; Distribution</div>
+        <div class="uc-title">Last-Mile Intelligence</div>
+        <div class="uc-body">Community validation, outlet intelligence, consumer trust-building, verified route-to-consumer networks.</div>
+        <div class="uc-chips"><span class="chip a">Distribution</span><span class="chip i">Consumer insights</span></div>
+      </div>
+      <div class="uc">
+        <div class="uc-num">03</div>
+        <div class="uc-icon">🏛️</div>
+        <div class="uc-tag">Government &amp; Public</div>
+        <div class="uc-title">Citizen Consultation</div>
+        <div class="uc-body">Scalable citizen engagement, service delivery feedback, and verified community consultation at ward and LGA level.</div>
+        <div class="uc-chips"><span class="chip c">Policy feedback</span><span class="chip g">Service delivery</span></div>
+      </div>
+      <div class="uc">
+        <div class="uc-num">04</div>
+        <div class="uc-icon">⚒️</div>
+        <div class="uc-tag">Unions &amp; Membership</div>
+        <div class="uc-title">Member Engagement</div>
+        <div class="uc-body">Registration, communications, ballots, grievance reporting, branch coordination and transparent performance tracking.</div>
+        <div class="uc-chips"><span class="chip i">Member comms</span><span class="chip a">Coordination</span></div>
+      </div>
+      <div class="uc">
+        <div class="uc-num">05</div>
+        <div class="uc-icon">🗳️</div>
+        <div class="uc-tag">Political Campaigns</div>
+        <div class="uc-title">Grassroots Mobilisation</div>
+        <div class="uc-body">Verified grassroots networks, ward canvassing, organiser discovery, and infrastructure that survives the election.</div>
+        <div class="uc-chips"><span class="chip g">Ward organising</span><span class="chip i">Election ops</span></div>
+      </div>
+      <div class="uc">
+        <div class="uc-num">06</div>
+        <div class="uc-icon">🩺</div>
+        <div class="uc-tag">Community Health</div>
+        <div class="uc-title">Health Programme Delivery</div>
+        <div class="uc-body">CHW coordination, vaccination tracking, health survey collection, outbreak early warning and verified follow-up.</div>
+        <div class="uc-chips"><span class="chip c">CHW coordination</span><span class="chip g">Health surveys</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY SERVICES -->
+<section class="section darker">
+  <div class="shell">
+    <div class="services-banner">
+      <div class="eyebrow cyan">Beyond Engagement</div>
+      <h2 class="sec-h">ASPIRE as the delivery rail<br>for <span style="color:#06b6d4;">community services.</span></h2>
+      <p class="sec-p" style="color:rgba(255,255,255,.5);">A verified, trusted network becomes infrastructure for reaching people traditional service delivery leaves behind.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-icon">🏦</div>
+          <div class="svc-title">Financial Inclusion</div>
+          <div class="svc-body">Onboarding unbanked communities to digital financial services via trusted local networks</div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">🤖</div>
+          <div class="svc-title">AI Literacy Training</div>
+          <div class="svc-body">Digital skills delivered through community organisers and verified member networks</div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">👁️</div>
+          <div class="svc-title">Election Observation</div>
+          <div class="svc-body">Decentralised polling-unit monitoring, incident reporting, real-time transparency</div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">💼</div>
+          <div class="svc-title">Skills &amp; Employment</div>
+          <div class="svc-body">Connecting verified members to training and employment pipelines through trusted networks</div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">🚨</div>
+          <div class="svc-title">Emergency Coordination</div>
+          <div class="svc-body">Rapid local response, flood alerts, resource distribution via geo-verified members</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="section dark">
+  <div class="shell">
+    <div class="eyebrow">Architecture</div>
+    <h2 class="sec-h">14 integrated capability layers.</h2>
+    <p class="sec-p">ASPIRE is not a point solution. It is comprehensive operating infrastructure across every dimension of community engagement.</p>
+    <div class="layer-grid">
+      <div class="layer"><span>01</span>Verification</div>
+      <div class="layer"><span>02</span>Recruitment</div>
+      <div class="layer"><span>03</span>Rewards</div>
+      <div class="layer"><span>04</span>Gamification</div>
+      <div class="layer"><span>05</span>Communication</div>
+      <div class="layer"><span>06</span>Intelligence</div>
+      <div class="layer"><span>07</span>AI Layer</div>
+      <div class="layer"><span>08</span>Media Engine</div>
+      <div class="layer"><span>09</span>Organisation</div>
+      <div class="layer"><span>10</span>Rally Ops</div>
+      <div class="layer"><span>11</span>Election Ops</div>
+      <div class="layer"><span>12</span>Density Mapping</div>
+      <div class="layer"><span>13</span>Memory</div>
+      <div class="layer"><span>14</span>Leader Dev.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section darker">
+  <div class="shell">
+    <div class="eyebrow">Dashboard</div>
+    <h2 class="sec-h">Complete visibility.<br>Every signal. <span>In real time.</span></h2>
+    <div class="dash">
+      <div class="dash-header">
+        <div class="dd" style="background:#ef4444;"></div>
+        <div class="dd" style="background:#f59e0b;"></div>
+        <div class="dd" style="background:#22c55e;"></div>
+        <span class="dash-label">aspire · community operations · Lagos State</span>
+      </div>
+      <div class="dash-stats">
+        <div class="ds"><div class="ds-num">23,847</div><div class="ds-lbl">Verified Members</div><div class="ds-trend g">↑ +1,243 this week</div></div>
+        <div class="ds"><div class="ds-num">412</div><div class="ds-lbl">Active Organisers</div><div class="ds-trend g">71 streets covered</div></div>
+        <div class="ds"><div class="ds-num">96%</div><div class="ds-lbl">Message Delivery</div><div class="ds-trend g">All channels</div></div>
+        <div class="ds"><div class="ds-num">87</div><div class="ds-lbl">Engagement Score</div><div class="ds-trend a">↑ +12 from last month</div></div>
+      </div>
+      <div class="dash-lower">
+        <div class="db">
+          <div class="db-label">Community Density · Zone View</div>
+          <div class="mini-density">
+            <div class="md" style="background:rgba(34,197,94,.9);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(34,197,94,.7);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(99,102,241,.5);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(99,102,241,.7);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(34,197,94,.6);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(245,158,11,.5);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(239,68,68,.4);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(239,68,68,.6);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(99,102,241,.4);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(34,197,94,.3);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(245,158,11,.4);aspect-ratio:1;border-radius:2px;"></div><div class="md" style="background:rgba(239,68,68,.3);aspect-ratio:1;border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="db">
+          <div class="db-label">Top Issues · AI-detected</div>
+          <div class="issue-bar"><div class="ib-row"><span>Water supply</span><span style="color:#ef4444;font-weight:700;">38%</span></div><div class="ib-track"><div class="ib-fill" style="width:38%;background:#ef4444;"></div></div></div>
+          <div class="issue-bar"><div class="ib-row"><span>Road conditions</span><span style="color:#f59e0b;font-weight:700;">27%</span></div><div class="ib-track"><div class="ib-fill" style="width:27%;background:#f59e0b;"></div></div></div>
+          <div class="issue-bar"><div class="ib-row"><span>Youth employment</span><span style="color:#6366f1;font-weight:700;">19%</span></div><div class="ib-track"><div class="ib-fill" style="width:19%;background:#6366f1;"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACTION -->
+<section class="section dark">
+  <div class="shell">
+    <div class="traction-box">
+      <div class="eyebrow">Proof of Concept</div>
+      <div class="traction-quote">
+        "Starting from 5 participants, the network reached <span class="hl">~2,000 verified members in four days</span> — with zero financial incentive. People were competing to join."
+      </div>
+      <div class="traction-attr">ASPIRE prototype · 2014 · Jimmy Agbaje Lagos Governorship Campaign</div>
+      <p style="font-size:14px;color:var(--dim);margin-top:14px;max-width:560px;line-height:1.6;">With AI, gamification, and financial incentives now integrated, the growth ceiling is structurally higher.</p>
+      <div class="traction-stat-row">
+        <div class="ts"><div class="ts-num">2,000+</div><div class="ts-lbl">Members in 4 days, no financial incentive</div></div>
+        <div class="ts"><div class="ts-num">0₦</div><div class="ts-lbl">Financial incentive needed to prove viral mechanic</div></div>
+        <div class="ts"><div class="ts-num">14</div><div class="ts-lbl">Platform layers built on that foundation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS MODEL -->
+<section class="section darker" id="model">
+  <div class="shell">
+    <div class="eyebrow green">Business Model</div>
+    <h2 class="sec-h">Transparent pricing.<br>Built for <span style="color:var(--green);">scale.</span></h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-num">TBD</div>
+        <div class="price-unit">Starter · up to 5,000 members</div>
+        <ul class="price-feats">
+          <li>Verification engine</li>
+          <li>Referral mechanics</li>
+          <li>SMS + WhatsApp</li>
+          <li>Basic density dashboard</li>
+          <li>50 AI queries/month</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Popular</div>
+        <div class="price-tier" style="color:var(--amber);">Growth</div>
+        <div class="price-num" style="color:var(--amber);">TBD</div>
+        <div class="price-unit">Growth · up to 50,000 members</div>
+        <ul class="price-feats">
+          <li>All Starter features</li>
+          <li>Gamification + leaderboards</li>
+          <li>Unlimited AI generation</li>
+          <li>Sentiment + issue detection</li>
+          <li>Rally &amp; event ops</li>
+          <li>Full density mapping</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--green);">Enterprise</div>
+        <div class="price-num" style="color:var(--green);">Custom</div>
+        <div class="price-unit">Unlimited · White-label available</div>
+        <ul class="price-feats">
+          <li>All Growth features</li>
+          <li>White-label &amp; custom domain</li>
+          <li>AI fine-tuning</li>
+          <li>Election operations module</li>
+          <li>Full API access</li>
+          <li>Exclusivity options</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--indigo2);">Programme</div>
+        <div class="price-num" style="color:var(--indigo2);">Project</div>
+        <div class="price-unit">Per deployment · NGO / Dev orgs</div>
+        <ul class="price-feats">
+          <li>Fixed-term engagement</li>
+          <li>Donor-reportable metrics</li>
+          <li>Beneficiary verification</li>
+          <li>Impact dashboard</li>
+          <li>Services layer add-ons</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTORS -->
+<section class="section dark" id="investors">
+  <div class="shell">
+    <div class="eyebrow">For Investors</div>
+    <h2 class="sec-h">A massive, underserved market.<br><span>Durable moats.</span></h2>
+    <div class="market-tiles">
+      <div class="mt">
+        <div class="mt-label">TAM</div>
+        <div class="mt-num">$4.2B</div>
+        <div class="mt-lbl">Community engagement + civic-tech + last-mile coordination in Africa</div>
+      </div>
+      <div class="mt">
+        <div class="mt-label">SAM</div>
+        <div class="mt-num a">$620M</div>
+        <div class="mt-lbl">Nigeria, Ghana, Kenya — NGOs, government, campaigns, FMCG</div>
+      </div>
+      <div class="mt">
+        <div class="mt-label">SOM · Year 3</div>
+        <div class="mt-num g">$28M</div>
+        <div class="mt-lbl">Nigeria-focused · 3 anchor sectors · 50+ enterprise clients</div>
+      </div>
+    </div>
+    <div class="moats">
+      <div class="moat">
+        <div class="moat-num">01</div>
+        <div class="moat-title">Network Effects</div>
+        <div class="moat-body">Every new member increases value for every existing member. First mover in a region builds a density moat that is difficult to replicate.</div>
+      </div>
+      <div class="moat">
+        <div class="moat-num">02</div>
+        <div class="moat-title">AI Learns Your Community</div>
+        <div class="moat-body">ASPIRE trains on each organisation's community data — building local knowledge generic platforms can never match.</div>
+      </div>
+      <div class="moat">
+        <div class="moat-num">03</div>
+        <div class="moat-title">Persistent Memory Compounds</div>
+        <div class="moat-body">Competitors start every cycle from zero. ASPIRE accumulates. Each new programme starts ahead of the last one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section darker" id="contact">
+  <div class="shell">
+    <div class="cta-block">
+      <div class="cta-inner">
+        <h2 class="cta-h">Build something that compounds.</h2>
+        <p class="cta-p">Join pilot partners or discuss investment in the platform that communities will run on.</p>
+        <div class="cta-btns">
+          <a href="mailto:hello@aspire.com.ng" class="btn-amber">Request a demo</a>
+          <a href="mailto:invest@aspire.com.ng" class="btn-ghost">Investor enquiries</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="brand"><div class="brand-mark">A</div><div class="brand-name">ASPIRE</div></a>
+        <p>AI community engagement infrastructure for organisations that work with real people at scale.</p>
+        <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.2);">A Nackford Ltd product · Nigeria</p>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <a href="#platform">How It Works</a>
+        <a href="#ai">AI Layer</a>
+        <a href="#sectors">Sectors</a>
+        <a href="#model">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h4>Use Cases</h4>
+        <a href="#sectors">NGOs &amp; Civic</a>
+        <a href="#sectors">Government</a>
+        <a href="#sectors">FMCG</a>
+        <a href="#sectors">Campaigns</a>
+        <a href="#sectors">Health</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="https://nackford.com.ng">About Nackford Ltd</a>
+        <a href="#investors">Investors</a>
+        <a href="mailto:hello@aspire.com.ng">hello@aspire.com.ng</a>
+        <a href="https://aspire.com.ng">aspire.com.ng</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nackford Ltd. All rights reserved.</span>
+      <span>aspire.com.ng · Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

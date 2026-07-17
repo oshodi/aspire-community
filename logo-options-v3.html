@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo Options v3 — ASPIRE · Creative Round</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.5;}
+.shell{width:min(1200px,calc(100%-48px));margin:0 auto;padding:60px 0 80px;}
+h1{font-size:28px;font-weight:900;letter-spacing:-.04em;margin-bottom:6px;}
+.sub{font-size:15px;color:#64748b;margin-bottom:40px;max-width:680px;line-height:1.6;}
+
+/* LLM prompt box */
+.prompt-box{
+  background:#0f172a;border-radius:16px;padding:32px 36px;
+  margin-bottom:64px;border:2px solid #1e293b;
+}
+.prompt-box h2{font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;}
+.prompt-text{
+  font-family:'JetBrains Mono',monospace;font-size:13px;
+  color:#e2e8f0;line-height:1.75;white-space:pre-wrap;
+}
+.prompt-text .hl{color:#06b6d4;}
+.prompt-text .dim{color:#64748b;}
+
+/* Logo display */
+.brand-label{font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;}
+.brand-name{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.02em;margin-bottom:24px;}
+.options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;}
+.opt{background:#fff;border-radius:18px;border:2px solid #e2e8f0;overflow:hidden;}
+.preview-row{display:flex;}
+.pv{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;}
+.pv svg{max-width:260px;height:auto;display:block;}
+.pv.on-light{background:#ffffff;}
+.pv.on-dark{background:#0a0f1e;}
+.info{padding:22px 24px;border-top:2px solid #f1f5f9;}
+.opt-num{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;}
+.opt-name{font-size:16px;font-weight:800;color:#0f172a;margin-bottom:8px;}
+.opt-why{font-size:13px;color:#64748b;line-height:1.6;}
+.note{
+  background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+  padding:24px 28px;font-size:13px;color:#64748b;line-height:1.6;margin-top:20px;
+}
+.note strong{color:#0f172a;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <p style="font-size:11px;font-weight:700;color:#94a3b8;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;">Logo Options · Round 3</p>
+  <h1>ASPIRE — Creative Round</h1>
+  <p class="sub">Three completely new visual metaphors — moving away from signal-node circles into more distinct, ownable territory. The LLM prompt below can be used to commission further variants from any image-generating model.</p>
+
+  <!-- LLM Prompt -->
+  <div class="prompt-box">
+    <h2>Prompt for another LLM / image model</h2>
+    <div class="prompt-text"><span class="hl">Design a wordmark-and-mark logo for ASPIRE</span>, an AI-powered community engagement platform used by governments, NGOs, and organisations that work with large groups of real people.
+
+<span class="hl">What the mark must communicate:</span>
+— A network of real human nodes (not abstract tech circles)
+— Signal intelligence flowing between people
+— Growth, reach, and organised coordination
+— Africa as origin, global as ambition
+
+<span class="hl">What to avoid:</span>
+— Generic wifi/signal arcs
+— The letter A as the primary shape
+— Over-used gradient blue spheres
+— Anything that looks like a telecom or SaaS startup logo
+
+<span class="hl">Technical constraints:</span>
+— Must work at 16×16px (favicon) and 200px header width
+— Maximum 3 colours
+— Clean vector, no gradients that won't survive black-and-white reproduction
+— The wordmark is "ASPIRE" in a geometric sans-serif, weight 800–900
+
+<span class="hl">Try these 3 distinct conceptual directions:</span>
+<span class="dim">1. CONSTELLATION MAP — dots connected by fine lines forming a geographic cluster pattern. The dots are sized by density/activity, not equally spaced. Feels like a community coming into focus.</span>
+<span class="dim">2. FINGERPRINT NETWORK — a fingerprint arc structure where each ring-arc is interrupted and bridged by small node dots. Unique identity + networked connection in a single shape.</span>
+<span class="dim">3. ROOT SYSTEM — an upward-branching structure (roots or dendrites) where the base is thick and single, splitting into a spread of nodes. Growth from one source into many — community radiating outward from a verified core.</span>
+
+Deliver each as SVG with viewBox="0 0 240 56" to match the wordmark format, plus a standalone mark-only version at viewBox="0 0 48 48".</div>
+  </div>
+
+  <!-- ════════════ LOGOS ════════════ -->
+  <div class="brand-label">Brand 01 · Round 3</div>
+  <div class="brand-name">ASPIRE — Three new directions</div>
+
+  <div class="options-grid">
+
+    <!-- OPTION A: Constellation Map -->
+    <div class="opt">
+      <div class="preview-row">
+        <!-- Light version -->
+        <div class="pv on-light">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="cA-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2563eb" stop-opacity=".12"/>
+                <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Background glow -->
+            <ellipse cx="30" cy="30" rx="28" ry="28" fill="url(#cA-glow)"/>
+            <!-- Constellation lines — fine, intentional -->
+            <line x1="12" y1="44" x2="22" y2="32" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="22" y1="32" x2="30" y2="22" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="30" y1="22" x2="42" y2="18" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="30" y1="22" x2="20" y2="16" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="22" y1="32" x2="14" y2="30" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="22" y1="32" x2="32" y2="40" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <line x1="32" y1="40" x2="44" y2="38" stroke="#0f172a" stroke-width="1" opacity=".25"/>
+            <!-- Nodes — sized by importance/density -->
+            <circle cx="30" cy="22" r="6" fill="#2563eb"/>        <!-- core: large -->
+            <circle cx="22" cy="32" r="4" fill="#0f172a"/>        <!-- secondary -->
+            <circle cx="42" cy="18" r="3.5" fill="#0f172a"/>      <!-- tertiary -->
+            <circle cx="20" cy="16" r="2.5" fill="#0f172a" opacity=".6"/>
+            <circle cx="32" cy="40" r="3" fill="#0f172a" opacity=".7"/>
+            <circle cx="14" cy="30" r="2" fill="#0f172a" opacity=".5"/>
+            <circle cx="44" cy="38" r="2" fill="#0f172a" opacity=".5"/>
+            <circle cx="12" cy="44" r="1.5" fill="#0f172a" opacity=".35"/>
+            <!-- Core inner dot -->
+            <circle cx="30" cy="22" r="2.5" fill="#fff"/>
+            <!-- Wordmark -->
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#0f172a" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+        <!-- Dark version -->
+        <div class="pv on-dark">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="cAd-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#06b6d4" stop-opacity=".15"/>
+                <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="30" cy="30" rx="28" ry="28" fill="url(#cAd-glow)"/>
+            <line x1="12" y1="44" x2="22" y2="32" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="22" y1="32" x2="30" y2="22" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="30" y1="22" x2="42" y2="18" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="30" y1="22" x2="20" y2="16" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="22" y1="32" x2="14" y2="30" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="22" y1="32" x2="32" y2="40" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <line x1="32" y1="40" x2="44" y2="38" stroke="#67e8f9" stroke-width="1" opacity=".3"/>
+            <circle cx="30" cy="22" r="6" fill="#06b6d4"/>
+            <circle cx="22" cy="32" r="4" fill="#e2e8f0"/>
+            <circle cx="42" cy="18" r="3.5" fill="#e2e8f0"/>
+            <circle cx="20" cy="16" r="2.5" fill="#e2e8f0" opacity=".55"/>
+            <circle cx="32" cy="40" r="3" fill="#e2e8f0" opacity=".65"/>
+            <circle cx="14" cy="30" r="2" fill="#e2e8f0" opacity=".45"/>
+            <circle cx="44" cy="38" r="2" fill="#e2e8f0" opacity=".45"/>
+            <circle cx="12" cy="44" r="1.5" fill="#e2e8f0" opacity=".3"/>
+            <circle cx="30" cy="22" r="2.5" fill="#020c1b"/>
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#f0f6ff" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+      </div>
+      <div class="info">
+        <div class="opt-num">Variant A</div>
+        <div class="opt-name">Constellation Map</div>
+        <div class="opt-why">A geographic cluster of human-scale dots connected by fine lines — each node a real person, sized by activity. The core node anchors the whole system. Reads as "community coming into focus" rather than tech infrastructure. Holds up at favicon size because the core node is prominent. Low visual noise, high geographic intelligence signal.</div>
+      </div>
+    </div>
+
+    <!-- OPTION B: Fingerprint Network -->
+    <div class="opt">
+      <div class="preview-row">
+        <div class="pv on-light">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fingerprint arcs — concentric partial rings interrupted by node bridges -->
+            <!-- Outer arc -->
+            <path d="M8 34 A22 22 0 0 1 28 12" stroke="#0f172a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <path d="M32 12 A22 22 0 0 1 52 34" stroke="#0f172a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <path d="M52 38 A22 22 0 0 1 30 56" stroke="#0f172a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <!-- Mid arc -->
+            <path d="M12 34 A18 18 0 0 1 30 16" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <path d="M30 16 A18 18 0 0 1 48 34" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <path d="M48 38 A18 18 0 0 1 30 52" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <!-- Inner arc -->
+            <path d="M16 32 A14 14 0 0 1 30 18" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+            <path d="M30 18 A14 14 0 0 1 44 32" stroke="#0f172a" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+            <!-- Node interruptions — bridging points on arcs (ASPIRE blue) -->
+            <circle cx="30" cy="12" r="3.5" fill="#2563eb"/>   <!-- top outer -->
+            <circle cx="52" cy="36" r="3" fill="#2563eb"/>     <!-- right outer -->
+            <circle cx="30" cy="16" r="3" fill="#2563eb"/>     <!-- top mid -->
+            <circle cx="48" cy="36" r="2.5" fill="#0f172a"/>   <!-- right mid -->
+            <circle cx="12" cy="36" r="2.5" fill="#0f172a"/>   <!-- left mid -->
+            <!-- Core -->
+            <circle cx="30" cy="30" r="5" fill="#2563eb"/>
+            <circle cx="30" cy="30" r="2" fill="#fff"/>
+            <!-- Wordmark -->
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#0f172a" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+        <div class="pv on-dark">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 34 A22 22 0 0 1 28 12" stroke="#67e8f9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <path d="M32 12 A22 22 0 0 1 52 34" stroke="#67e8f9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <path d="M52 38 A22 22 0 0 1 30 56" stroke="#67e8f9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".2"/>
+            <path d="M12 34 A18 18 0 0 1 30 16" stroke="#67e8f9" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <path d="M30 16 A18 18 0 0 1 48 34" stroke="#67e8f9" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <path d="M48 38 A18 18 0 0 1 30 52" stroke="#67e8f9" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".35"/>
+            <path d="M16 32 A14 14 0 0 1 30 18" stroke="#67e8f9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+            <path d="M30 18 A14 14 0 0 1 44 32" stroke="#67e8f9" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+            <circle cx="30" cy="12" r="3.5" fill="#06b6d4"/>
+            <circle cx="52" cy="36" r="3" fill="#06b6d4"/>
+            <circle cx="30" cy="16" r="3" fill="#06b6d4"/>
+            <circle cx="48" cy="36" r="2.5" fill="#e2e8f0"/>
+            <circle cx="12" cy="36" r="2.5" fill="#e2e8f0"/>
+            <circle cx="30" cy="30" r="5" fill="#06b6d4"/>
+            <circle cx="30" cy="30" r="2" fill="#020c1b"/>
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#f0f6ff" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+      </div>
+      <div class="info">
+        <div class="opt-num">Variant B</div>
+        <div class="opt-name">Fingerprint Network</div>
+        <div class="opt-why">Concentric arc-rings — the structure of a fingerprint — interrupted and bridged by node dots. Unique identity is the fingerprint; network is the bridging nodes. The most conceptually tight of the three: identity + community in one mark. The arc gaps draw the eye inward to the core, making it memorable at any size. No other AI company uses this form.</div>
+      </div>
+    </div>
+
+    <!-- OPTION C: Root System -->
+    <div class="opt">
+      <div class="preview-row">
+        <div class="pv on-light">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Root system — single base branching upward -->
+            <!-- Main trunk -->
+            <line x1="30" y1="52" x2="30" y2="34" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+            <!-- Primary branches -->
+            <line x1="30" y1="34" x2="16" y2="22" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="44" y2="22" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Secondary branches — left -->
+            <line x1="16" y1="22" x2="8" y2="14" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
+            <line x1="16" y1="22" x2="22" y2="12" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Secondary branches — right -->
+            <line x1="44" y1="22" x2="38" y2="12" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
+            <line x1="44" y1="22" x2="50" y2="12" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Tertiary — centre top -->
+            <line x1="30" y1="34" x2="30" y2="20" stroke="#0f172a" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            <!-- Terminal nodes — the people/communities -->
+            <circle cx="30" cy="52" r="4.5" fill="#0f172a"/>      <!-- root/source -->
+            <circle cx="16" cy="22" r="3.5" fill="#0f172a"/>
+            <circle cx="44" cy="22" r="3.5" fill="#0f172a"/>
+            <circle cx="8" cy="14" r="2.5" fill="#0f172a" opacity=".55"/>
+            <circle cx="22" cy="12" r="3" fill="#2563eb"/>
+            <circle cx="38" cy="12" r="2.5" fill="#0f172a" opacity=".55"/>
+            <circle cx="50" cy="12" r="3" fill="#2563eb"/>
+            <circle cx="30" cy="20" r="2.5" fill="#0f172a" opacity=".45"/>
+            <!-- Source inner mark -->
+            <circle cx="30" cy="52" r="1.8" fill="#fff"/>
+            <!-- Wordmark -->
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#0f172a" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+        <div class="pv on-dark">
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="52" x2="30" y2="34" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="16" y2="22" stroke="#e2e8f0" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="44" y2="22" stroke="#e2e8f0" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="16" y1="22" x2="8" y2="14" stroke="#e2e8f0" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+            <line x1="16" y1="22" x2="22" y2="12" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="44" y1="22" x2="38" y2="12" stroke="#e2e8f0" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+            <line x1="44" y1="22" x2="50" y2="12" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="30" y2="20" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+            <circle cx="30" cy="52" r="4.5" fill="#e2e8f0"/>
+            <circle cx="16" cy="22" r="3.5" fill="#e2e8f0"/>
+            <circle cx="44" cy="22" r="3.5" fill="#e2e8f0"/>
+            <circle cx="8" cy="14" r="2.5" fill="#e2e8f0" opacity=".45"/>
+            <circle cx="22" cy="12" r="3" fill="#06b6d4"/>
+            <circle cx="38" cy="12" r="2.5" fill="#e2e8f0" opacity=".45"/>
+            <circle cx="50" cy="12" r="3" fill="#06b6d4"/>
+            <circle cx="30" cy="20" r="2.5" fill="#e2e8f0" opacity=".35"/>
+            <circle cx="30" cy="52" r="1.8" fill="#020c1b"/>
+            <text x="68" y="35" font-family="Inter,sans-serif" font-weight="900" font-size="23" fill="#f0f6ff" letter-spacing="-1">ASPIRE</text>
+          </svg>
+        </div>
+      </div>
+      <div class="info">
+        <div class="opt-num">Variant C</div>
+        <div class="opt-name">Root System</div>
+        <div class="opt-why">A single verified source (the base node) branches upward into a growing network — like roots, dendrites, or a distribution network radiating from one point of truth. The two highlighted (blue/cyan) terminal nodes represent AI-activated growth branches. The metaphor is organic and grounded — growth that starts verified and spreads with purpose. Very distinctive silhouette; nothing else in civic tech uses this.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>Choosing a direction:</strong> Variant A (Constellation) is the most immediately legible and sector-appropriate. Variant B (Fingerprint) is the most conceptually sharp and memorable — highest risk, highest reward. Variant C (Root System) has the strongest organic/human feel and most distinctive silhouette. Once you confirm a direction, I'll clean up the chosen mark, export standalone SVG files, and embed across all four ASPIRE site variants and the pitch deck.
+  </div>
+
+  <div style="margin-top:20px;" class="note">
+    <strong>LLM prompt above (in dark box)</strong> is ready to copy into any image-generation model (Midjourney, DALL-E, Stable Diffusion) or a specialist logo AI. It specifies the three same metaphors above so you can compare AI-generated interpretations against these hand-crafted SVG versions.
+  </div>
+
+</div>
+</body>
+</html>
