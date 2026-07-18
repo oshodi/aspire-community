@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>ASPIRE logo — blue steps (dark background)</title>
+  <!-- No circle background — transparent for dark contexts -->
+  <path fill="#7EC4FF" d="M232 92.8 L253.1 92.8 L253.1 222.4 L172.2 222.4 Z"/>
+  <path fill="#5EA8FF" d="M258.9 92.8 L280 92.8 L339.8 222.4 L258.9 222.4 Z"/>
+  <path fill="#3D88F0" d="M167.9 232 L253.6 232 L174.4 395.2 L92.8 395.2 Z"/>
+  <path fill="#2563EB" d="M258.4 232 L344.1 232 L419.2 395.2 L337.6 395.2 Z"/>
+</svg>
